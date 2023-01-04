@@ -222,11 +222,11 @@ label {
 
 @media screen and (max-width: 620px) {
     label {
-        font-size: 1rem;
+        display:none;
     }
 
     .header-title {
-        font-size: 2rem;
+        font-size: 1.8rem;
     }
 
     .background1,
