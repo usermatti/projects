@@ -33,7 +33,7 @@ header a:hover {
     letter-spacing: 1.5px;
 }
 
-label {
+.header-title p {
     position: absolute;
     text-align: right;
     font-size: 2rem;
@@ -42,7 +42,6 @@ label {
 
 .header-title {
     position: relative;
-    font-size: 4rem;
     -webkit-user-select: none;
     /* Safari */
     -ms-user-select: none;
@@ -54,6 +53,7 @@ label {
 
 .header-title h1 {
     margin-top: 25px;
+    font-size: 8rem;
 }
 
 .header-title h1 strong {
@@ -107,31 +107,6 @@ label {
     display: none;
 }
 
-.custom-shape-divider-bottom-1672598083 {
-    width: 100%;
-    overflow: hidden;
-    line-height: 0;
-    transform: rotate(180deg);
-    font-size: 0;
-}
-
-.custom-shape-divider-bottom-1672598083 svg {
-    position: relative;
-    display: block;
-    width: calc(100% + 1.3px);
-    height: 130px;
-    margin: 0;
-    padding: 0;
-}
-
-.custom-shape-divider-bottom-1672598083 .shape-fill {
-    fill: #ADD8E6;
-    margin: 0;
-    padding: 0;
-    font-size: 0;
-    line-height: 0;
-}
-
 .about {
     display: grid;
     place-items: center;
@@ -146,19 +121,12 @@ label {
 }
 
 .roles {
-    display: grid;
-    place-items: center;
-    margin: 100px 10px;
+    background-color: white;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 50px 10%;
     row-gap: 50px;
-}
-
-.role-desc p {
-    line-height: 2;
-    text-align: center;
-}
-
-.role-desc .logo {
-    font-size: inherit;
+    column-gap: 50px;
 }
 
 .person-role {
@@ -168,16 +136,20 @@ label {
     row-gap: 50px;
 }
 
-.reveal {
-    position: relative;
-    transform: translateY(75px);
-    opacity: 0;
-    transition: all 1.5s ease;
+.role-desc {
+    text-align: center;
+    word-wrap: break-word;
 }
 
-.reveal.active {
+.reveal {
+    transform: translateY(75px);
+    opacity: 0;
+}
+
+.active {
     transform: translateY(0px);
     opacity: 1;
+    transition: 1s;
 }
 
 @media screen and (max-width: 1280px) {
@@ -195,12 +167,8 @@ label {
         display: block;
     }
 
-    label {
-        font-size: 1.75rem;
-    }
-
-    .header-title {
-        font-size: 3rem;
+    .header-title h1 {
+        font-size: 6rem;
     }
 
     .foreground {
@@ -221,12 +189,12 @@ label {
 }
 
 @media screen and (max-width: 620px) {
-    label {
-        display:none;
+    .header-title p {
+        font-size: 1.5rem;
     }
 
-    .header-title {
-        font-size: 1.8rem;
+    .header-title h1 {
+        font-size: 5rem;
     }
 
     .background1,
@@ -246,5 +214,15 @@ label {
         width: 100%;
         top: 60%;
         right: -15%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .header-title p {
+        font-size: 1.2rem;
+    }
+
+    .header-title h1 {
+        font-size: 3.5rem;
     }
 }
