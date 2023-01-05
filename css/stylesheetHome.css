@@ -166,6 +166,10 @@ header a:hover {
     .hamburger-menu {
         display: block;
     }
+    
+    header a {
+        bottom: 10%;
+    }
 
     .header-title h1 {
         font-size: 6rem;
