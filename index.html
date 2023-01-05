@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
 
 <head>
@@ -17,8 +18,8 @@
                     <h1>gestion<strong>Defile</strong></h1>
                 </a>
                 <ul>
-                    <li><a class="navbarMenu" href="/">Accès public</a></li>
-                    <li><a class="navbarMenu" href="/">Connexion</a></li>
+                    <li><a class="navbarMenu" href="https://youtu.be/dQw4w9WgXcQ">Accès public</a></li>
+                    <li><a class="navbarMenu" href="https://youtu.be/xJZlO1dPktg?t=2">Connexion</a></li>
                 </ul>
             </nav>
         </div>
@@ -28,9 +29,10 @@
             <label class="menu__btn" for="menu__toggle">
                 <span></span>
             </label>
+
             <ul class="menu__box">
-                <li><a class="navbarHamburger" href="/">Accès public</a></li>
-                <li><a class="navbarHamburger" href="/">Connexion</a></li>
+                <li><a class="navbarHamburger" href="https://youtu.be/dQw4w9WgXcQ">Accès public</a></li>
+                <li><a class="navbarHamburger" href="https://youtu.be/xJZlO1dPktg?t=2">Connexion</a></li>
             </ul>
         </div>
 
@@ -39,7 +41,7 @@
             <img id="topleft" src="img/topleft.png" class="background2">
             <img id="bottomright" src="img/bottomright.png" class="foreground">
             <div class="header-title">
-                <label for="title">Votre outil de gestion de défilés</label>
+                <p class="reveal">Votre outil de gestion de défilés</p>
                 <h1 name="title">gestion<strong>Defile</strong></h1>
             </div>
             <a href="#about">↓ En savoir plus</a>
@@ -55,9 +57,9 @@
         <div class="roles">
             <div class="person-role right reveal" id="public">
                 <div class="role-icon">
-                    <img src="img/Browsing.png" alt="Personne sur son téléphone">
+                    <img style="height:400px;width:100%" src="img/Browsing.png" alt="Personne sur son téléphone">
                 </div>
-                <div class="role-desc right">
+                <div class="role-desc">
                     <p><span class=logo>gestion<strong>Defile</strong></span> est un outil de gestion de défilés de mode
                         destiné aux professionnels du secteur, mais qui est également accessible au grand public. Même
                         sans créer de compte, les visiteurs peuvent accéder à la recherche de défilés et consulter des
@@ -70,7 +72,7 @@
                 </div>
             </div>
             <div class="person-role left reveal" id="mannequin">
-                <div class="role-desc left">
+                <div class="role-desc">
                     <p><span class="logo">gestion<strong>Defile</strong></span> est l'outil idéal pour les mannequins
                         souhaitant bien s'organiser. En donnant accès à toutes les informations qui les concernent
                         directement, comme les vêtements et les accessoires qu'ils devront porter lors d'un défilé ainsi
@@ -80,14 +82,14 @@
                         ce qui compte le plus : leur travail.</p>
                 </div>
                 <div class="role-icon">
-                    <img src="img/Sitting.png" alt="Personne sur son ordinateur">
+                    <img src="img/Sitting.png" style="height:400px;width:100%" alt="Personne sur son ordinateur">
                 </div>
             </div>
             <div class="person-role right reveal" id="couturier">
                 <div class="role-icon">
-                    <img src="img/Standing.png" alt="Personne debout avec un livre">
+                    <img src="img/Standing.png" style="height:400px;width:100%" alt="Personne debout avec un livre">
                 </div>
-                <div class="role-desc right">
+                <div class="role-desc">
                     <p><span class=logo>gestion<strong>Defile</strong></span> est un outil essentiel pour les couturiers
                         souhaitant bien gérer leurs défilés. L'outil donne accès à toutes les informations concernant
                         leurs défilés, comme l'ajout, la modification et la suppression de mannequins, de vêtements et
@@ -103,7 +105,7 @@
                 </div>
             </div>
             <div class="person-role left reveal" id="organisateur">
-                <div class="role-desc left">
+                <div class="role-desc">
                     <p>Pour les organisateurs, <span class=logo>gestion<strong>Defile</strong></span> donne accès à
                         toutes les fonctionnalités nécessaires pour créer et modifier tout ce qui concerne les défilés
                         qu'ils organisent — comme les dates, les lieux et les couturiers invités.
@@ -113,7 +115,8 @@
                         aider les acteurs dans leur travail d'organisation de défilés de mode.</p>
                 </div>
                 <div class="role-icon">
-                    <img src="img/Planning.png" alt="Personne devant un calendrier géant">
+                    <img src="img/Planning.png" style="width:360px;width:100%"
+                        alt="Personne devant un calendrier géant">
                 </div>
             </div>
         </div>
@@ -121,46 +124,48 @@
             <a href="#home">
                 <p class="logo">gestion<strong>Defile</strong></p>
             </a>
-            <p>Copyright © 2023 C. BAT - M. BITON - A. BLONDELLE</p>
+            <p>C. BAT - M. BITON - A. BLONDELLE</p>
         </footer>
     </div>
 
     <script>
-        reveals = document.querySelectorAll('.reveal');
-
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
-                var reveals = document.querySelectorAll('.reveal');
-                reveals[0].classList.add('active');
+
                 document.querySelector(this.getAttribute('href')).scrollIntoView({
                     behavior: 'smooth'
                 });
             });
         });
+        /* _________ */
 
-        window.addEventListener('wheel', reveal);
+        const ratio = .1
+        const options = {
+            root: null,
+            rootMargin: '0px',
+            threshold: ratio
+        };
 
-        function reveal() {
-            for (var i = 0; i < reveals.length; i++) {
-
-                var windowHeight = window.innerHeight;
-                var revealTop = reveals[i].getBoundingClientRect().top;
-                var distance = 100;
-
-                if (revealTop < windowHeight - distance) {
-                    reveals[i].classList.add('active');
+        const handleIntersect = function (entries, observer) {
+            entries.forEach(function (entry) {
+                if (entry.intersectionRatio > ratio) {
+                    entry.target.classList.add('active')
+                    observer.unobserve(entry.target)
                 }
-                else {
-                    reveals[i].classList.remove('active');
-                }
-            }
+            })
         }
+
+        const observer = new IntersectionObserver(handleIntersect, options);
+        document.querySelectorAll(".reveal").forEach(function (r) {
+            observer.observe(r)
+        });
+
+        /* _________ */
 
         var stepSize = 2;
         var counter = 0;
 
-        // Function to animate the image
         function floatImageBg() {
             counter += stepSize;
             var newPosY = 1 + 1 * Math.sin(counter / 100);
